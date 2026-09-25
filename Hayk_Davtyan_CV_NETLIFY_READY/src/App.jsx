@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 const experience = [
@@ -115,19 +115,36 @@ function Icon({ children }) {
   return <span className="icon" aria-hidden="true">{children}</span>;
 }
 
-function App() {
-  const automaticTheme = useMemo(() => {
-    const hour = new Date().getHours();
-    const systemDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
-    return systemDark || hour >= 19 || hour < 7 ? "dark" : "light";
-  }, []);
+function getAutomaticTheme() {
+  const hour = new Date().getHours();
+  const systemDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+  return systemDark || hour >= 19 || hour < 7 ? "dark" : "light";
+}
 
+function App() {
+  const [automaticTheme, setAutomaticTheme] = useState(getAutomaticTheme);
   const [theme, setTheme] = useState(() => localStorage.getItem("cv-theme") || "auto");
   const effectiveTheme = theme === "auto" ? automaticTheme : theme;
 
   useEffect(() => {
+    const media = window.matchMedia?.("(prefers-color-scheme: dark)");
+    const updateAutomaticTheme = () => setAutomaticTheme(getAutomaticTheme());
+    const timer = window.setInterval(updateAutomaticTheme, 60_000);
+    media?.addEventListener?.("change", updateAutomaticTheme);
+
+    return () => {
+      window.clearInterval(timer);
+      media?.removeEventListener?.("change", updateAutomaticTheme);
+    };
+  }, []);
+
+  useEffect(() => {
     document.documentElement.dataset.theme = effectiveTheme;
     localStorage.setItem("cv-theme", theme);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      "content",
+      effectiveTheme === "dark" ? "#070b0e" : "#ffffff"
+    );
   }, [theme, effectiveTheme]);
 
   const cycleTheme = () => {
@@ -138,7 +155,7 @@ function App() {
     <div className="site-shell">
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Hayk Davtyan home">
-          <span className="brand-mark">HD</span>
+          <img className="brand-logo" src="/hd-logo.png" alt="" />
           <span className="brand-name">Hayk Davtyan</span>
         </a>
         <nav className="nav-links" aria-label="Main navigation">
@@ -181,14 +198,8 @@ function App() {
 
           <div className="hero-visual" aria-label="Profile portrait">
             <div className="portrait-frame">
-              <img src="/images/joh.jpg" alt="Hayk Davtyan" />
-              <div className="portrait-overlay">
-                <span>Current role</span>
-                <strong>Venge Engineering</strong>
-                <small>Since September 2026</small>
-              </div>
+              <img src="/images/hayk-davtyan.jpg" alt="Hayk Davtyan" />
             </div>
-            <div className="hero-side-note">TECHNICAL<br/>SOLUTIONS<br/>WITH A<br/>COMMERCIAL<br/>MINDSET</div>
           </div>
         </section>
 
@@ -326,7 +337,7 @@ function App() {
       </main>
 
       <footer className="footer section-wrap">
-        <div className="brand"><span className="brand-mark">HD</span><span className="brand-name">Hayk Davtyan</span></div>
+        <div className="brand"><img className="brand-logo" src="/hd-logo.png" alt="" /><span className="brand-name">Hayk Davtyan</span></div>
         <p>Sales Engineer • Technical Consultant • Front-End Background</p>
         <span>© 2026 Hayk Davtyan</span>
       </footer>
