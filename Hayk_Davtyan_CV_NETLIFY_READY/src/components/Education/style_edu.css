@@ -1,0 +1,64 @@
+.cv-education {
+  text-align: center;
+  hr {
+    color: var(--color);
+    border: 1px solid;
+    width: 100%;
+    margin: auto;
+  }
+  ul {
+    line-height: 28px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  li {
+    width: 100%;
+    line-height: 32px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.degree,
+.duration,
+.institution {
+  display: block;
+}
+.degree,
+.cv-education .institution {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 430px) {
+
+  .cv-education ul {
+    padding: 0 10px;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cv-education ul li {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  
+
+  .cv-education ul {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .cv-education ul li {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

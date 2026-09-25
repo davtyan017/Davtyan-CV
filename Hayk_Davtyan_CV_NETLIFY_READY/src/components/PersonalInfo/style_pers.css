@@ -1,0 +1,78 @@
+.name {
+  margin: auto;
+  margin-top: 5px;
+  min-height: 420px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+gap: 10px;
+  h1 {
+    font-size: 42px;
+    color: var(--color);
+    padding: 12px 0;
+  }
+  h2 {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: var(--color);
+  }
+  .Contact {
+    > p {
+      color: var(--color);
+      font-size: 22px;
+      padding: 18px 0;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    ul {
+      line-height: 32px;
+      font-size: 24px;
+    }
+  }
+  
+}
+
+@media only screen and (max-width: 430px) {
+  .name {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .name h1 {
+    font-size: 32px; 
+    padding: 10px 0;
+  }
+
+  .name h2 {
+    font-size: 20px; 
+  }
+
+  .name .Contact > p {
+    font-size: 18px; 
+    padding: 10px 0;
+  }
+
+  .name .Contact ul {
+    font-size: 18px; 
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .name h1 {
+    font-size: 38px;
+  }
+
+  .name h2 {
+    font-size: 24px;
+  }
+
+  .name .Contact > p {
+    font-size: 20px;
+  }
+
+  .name .Contact ul {
+    font-size: 22px;
+  }
+}

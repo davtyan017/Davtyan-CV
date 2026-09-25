@@ -1,0 +1,62 @@
+.cv-skills {
+  width: 600px;
+  text-align: center;
+  i {
+    color: var(--color);
+    font-weight: 600;
+    font-size: 28px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    li {
+      /* white-space: nowrap; */
+      border: 2px solid white;
+      margin: 8px 0;
+      padding: 8px 10px;
+      border-radius: 5px;
+      font-size: 24px;
+      line-height: 28px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: #1c859d75;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .cv-skills {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .cv-skills i {
+    font-size: 24px;
+  }
+  .cv-skills ul {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+  .cv-skills ul li {
+    width: 45%;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 6px;
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .cv-skills {
+    width: 100%;
+  }
+
+  .cv-skills ul li {
+    width: 45%;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

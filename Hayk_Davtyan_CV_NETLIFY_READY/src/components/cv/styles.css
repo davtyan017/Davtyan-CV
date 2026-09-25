@@ -1,0 +1,38 @@
+.cv-sections {
+  margin: auto;
+  max-width: 640px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  p {
+    padding: 18px 0;
+    color: var(--color);
+    font-weight: 600;
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .cv-sections {
+    max-width: 100%;
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .cv-sections p {
+    font-size: 24px;
+    padding: 12px 0;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .cv-sections {
+    max-width: 568px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}

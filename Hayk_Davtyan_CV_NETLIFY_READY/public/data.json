@@ -1,0 +1,73 @@
+[
+  {
+    "section": "Personal Information",
+    "content": {
+      "name": "Hayk Davtyan",
+      "profession": "Front-End Developer",
+      "contact": {
+        "phone": "+37433987366",
+        "address": "Sharur Street 28/2",
+        "email": "davtyann.hayk@gmail.com",
+        "github": "https://github.com/davtyan017"
+      }
+    }
+  },
+  {
+    "section": "Professional Summary",
+    "content": "Dedicated and detail-oriented Front_End Developer with 1+ years of experience.I studied at SmartCode development school."
+  },
+  {
+    "section": "Education",
+    "content": [
+      {
+        "degree": "Front-End Web Development Course",
+        "duration": " 2024-2025 ",
+        "institution": "Smart Code"
+      },
+      {
+        "degree": "BA in Electrical Energetics (EE)",
+        "duration": " 2017-2021 ",
+        "institution": "National Polytechnic University of Armenia"
+      },
+      {
+        "degree": "Certificate of Participation ",
+        "duration": " 80-hours training on OOP with C# & .NET ",
+        "institution": "Microsoft information Center Armenia"
+      }
+    ]
+  },
+  {
+    "section": "Skills",
+    "content": {
+      "Hard Skills": ["JavaScript", "HTML", "CSS", "React", "Redux"],
+      "Soft Skills": [
+        "Honest",
+        "Responsible",
+        "Detail-oriented",
+        "Fast-learner",
+        "Critical thinking",
+        "Hardworking",
+        "Positive attitude",
+        "Problem-solving"
+        
+      ]
+    }
+  },{
+    "section": "Projects",
+    "content": [
+      {
+        "name": "Portfolio Website",
+        "link": "https://filmsdavtyan.netlify.app/"
+      },
+      {
+        "name": "Portfolio Website",
+        "link": "https://regulus-landing.netlify.app/"
+      },
+      {
+        "name": "Blog Platform",
+        "link": "https://haykmanager.netlify.app/"
+      }
+    ]
+  }
+  
+]
